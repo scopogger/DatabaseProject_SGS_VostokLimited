@@ -183,7 +183,7 @@ function dbCreatePopulate() {
     (t, result) => console.log(result.rows)
   ));
 
-  alert('Alert from dbCreatePopulate');
+  alert('Запись успешно сохранена!');
 }
 
 
