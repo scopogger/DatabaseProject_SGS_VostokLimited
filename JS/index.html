@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+  <head>
+    <meta charset="utf-8">
+    <title>Новая запись</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" charset="utf-8" src="scripts.js"></script>
+  </head>
+
+
+  <body style="margin: 20px" onLoad="initialize()">
+    <h1>Добавить новую запись в рабочее расписание</h1>
+
+    <table>
+      <tr>
+        <td style="width: 90px">Город</td>
+        <td>
+          <select id="cityID">
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Цех</td>
+        <td>
+          <select id="depID">
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Сотрудник</td>
+        <td>
+          <select id="workerID">
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Бригада</td>
+        <td>
+          <input type="radio" id="groupFirstID" name="drone" value="8:00-20:00">
+          <span style="margin-right: 15px">8:00-20:00</span>
+          <input type="radio" id="groupSecondID" name="drone" value="20:00-8:00">
+          20:00-8:00
+        </td>
+      </tr>
+      <tr>
+        <td>Смена</td>
+        <td>
+          <select id="shiftID">
+            <option value=”first”>Первая смена</option>
+            <option value=”second”>Вторая смена</option>
+            <option value=”third”>Третья смена</option>
+            <option value=”fourth”>Четвёртая смена</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <input style="margin-top: 10px;" type="submit" value="Очистить поля" id="clearID" onclick="clearClicked()">
+        </td>
+        <td>
+          <input style="margin-top: 10px; float: right;" type="submit" value="Сохранить..." id="saveID" onclick="saveClicked()">
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
+
+
+
+<script>
+document.getElementById('cityID').onchange = (event) => {
+  var inputText = event.target.value;
+  cityChanged();
+};
+
+document.getElementById('depID').onchange = (event) => {
+  var inputText = event.target.value;
+  departmentChanged();
+};
+
+document.getElementById('workerID').onchange = (event) => {
+  var inputText = event.target.value;
+  workerChanged();
+};
+
+document.getElementById('groupFirstID').onchange = (event) => {
+  var inputText = event.target.value;
+  groupChanged();
+};
+
+document.getElementById('groupSecondID').onchange = (event) => {
+  var inputText = event.target.value;
+  groupChanged();
+};
+
+document.getElementById('shiftID').onchange = (event) => {
+  var inputText = event.target.value;
+  shiftChanged();
+};
+
+</script>
